@@ -390,6 +390,7 @@ button.activ {
     display: inline-flex;
     margin-top: -208px;
     filter: drop-shadow(0px 20px 50px rgba(0, 0, 0, 0.15));
+    position: relative;
 }
 
 .third-bg {
