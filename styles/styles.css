@@ -221,9 +221,6 @@ a:hover {
 }
 
 .title.two {
-    font-family: 'Yeseva One', cursive;
-    font-style: normal;
-    font-weight: 400;
     font-size: 27px;
     line-height: 37px;
     letter-spacing: -0.07em;
@@ -1023,15 +1020,12 @@ section.seven {
 }
 
 .button-question {
-    background: #E3B873;
     box-shadow: 0 5px 20px rgba(227, 184, 115, 0.1);
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 27px;
     text-align: center;
-    text-transform: uppercase;
-    color: #FFFFFF;
     width: 200px;
     height: 51px;
     border-radius: 0;
@@ -1615,7 +1609,6 @@ footer button {
         max-width: 311px;
     }
 
-
     .text-top {
         font-size: 14px;
     }
@@ -1645,7 +1638,6 @@ footer button {
         padding: 0;
         margin-top: 40px;
     }
-
 
     .form-questions-wrap {
         padding: 173px 0 0;
