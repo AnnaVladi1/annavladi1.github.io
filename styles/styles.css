@@ -186,9 +186,6 @@ a:hover {
     margin: 0 auto;
 }
 
-.second-navigation {
-    margin-bottom: 50px;
-}
 
 .second-navigation li {
     display: inline;
@@ -202,7 +199,7 @@ a:hover {
     margin-right: 0;
 }
 
-.second-navigation_item a {
+.second-navigation_item button {
     font-family: 'Yeseva One', cursive;
     font-style: normal;
     font-weight: 400;
@@ -213,9 +210,10 @@ a:hover {
     color: rgba(255, 255, 255, 0.3);
     padding-bottom: 6px;
     border-bottom: 1px solid transparent;
+    transition: .3s all ease;
 }
 
-.second-navigation_item a.active, .second-navigation_item a:hover {
+.second-navigation_item button.active, .second-navigation_item button:hover {
     color: #E3B873;
     border-color: #E3B873;
 }
@@ -235,17 +233,25 @@ a:hover {
     padding-top: 107px;
 }
 
+.projects-grid {
+    display: grid;
+    grid-template-columns: 442px auto;
+    grid-template-rows: 1fr;
+    align-items: flex-end;
+    column-gap: 50px;
+    position: relative;
+}
+
 .projects-img {
-    padding-left: 50px;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 
 .projects-img img {
     filter: drop-shadow(0px 50px 30px rgba(0, 0, 0, 0.15));
 }
 
-.projects-img > div img:last-child {
-    display: none;
-}
 
 .projects-img-mobile {
     display: none;
@@ -255,11 +261,32 @@ a:hover {
     width: 100%;
 }
 
-.projects-wrapp {
-    max-width: 442px;
+.projects-title {
+    grid-column-start: 1;
 }
 
-.projects-wrapp p {
+.projects-wrapp {
+
+    grid-column-start: 1;
+}
+
+.slider--left-block {
+    padding-bottom: 80px;
+}
+
+.slider--left-block,.slider--right-block {
+    display: none;
+}
+
+.slider--left-block.active, .slider--right-block.active {
+    display: block;
+}
+
+.slider--right-block {
+    padding-top: 50px;
+}
+
+.projects-title p {
 
     font-style: normal;
     font-weight: 400;
@@ -303,9 +330,6 @@ a:hover {
     color: #FFFFFF;
 }
 
-.text-span br {
-    display: none;
-}
 
 .arrow-left {
     background-image: url("../images/Group.svg");
@@ -324,12 +348,24 @@ a:hover {
 .nav-wrap {
     display: flex;
     align-items: center;
-    margin-top: 80px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
+
 
 .dot {
     display: flex;
     margin: 0 30px;
+}
+
+.nav-wrap {
+    min-width: 203px;
+    justify-content: space-between;
+}
+
+.dot.hidden {
+    display: none;
 }
 
 .dot button {
@@ -339,6 +375,7 @@ a:hover {
     height: 9px;
     padding: 0;
     border: 0;
+    transition: .3s all ease;
 }
 
 .dot li {
@@ -1127,6 +1164,10 @@ footer button {
     margin-left: 44px;
 }
 
+.slider--mobile-button {
+    display: none;
+}
+
 @media screen and (max-width: 1280px) {
     .header-navigation_nav, .header-content .button {
         display: none;
@@ -1215,6 +1256,7 @@ footer button {
         max-width: 748px;
     }
 
+
     .projects-wrapp p {
         font-size: 13px;
         line-height: 158.48%;
@@ -1228,28 +1270,60 @@ footer button {
         padding-top: 36px;
     }
 
-    .projects-img {
-        display: none;
+    .projects-grid {
+        grid-template-columns: auto;
+        justify-content: center;
+        padding: 0 18px;
     }
 
-    .projects-img-mobile {
-        position: relative;
+    .projects-title {
+        padding-bottom: 66px;
+    }
+
+    .slider--right-block.active {
         display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .slider--left-block {
+        padding-bottom: 0;
+    }
+
+    .projects-title {
+        max-width: 600px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .projects-img {
+        /*display: none;*/
+        grid-column-start: 1;
+        grid-row-start: 2;
+        position: relative;
+    }
+
+    .projects-img img {
+        width: 100%;
+    }
+
+    .slider--mobile-button {
+        display: flex;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #E3B873;
+        position: absolute;
         align-items: center;
         justify-content: center;
-
+        top: 50%;
+        transform: translate(0, -50%);
     }
-
-    .projects-img-mobile .mobile-button {
-        box-shadow: none;
-
-    }
-
-    .projects-img-mobile .mobile-button:nth-child(2) {
+    .slider--mobile-button.left {
         left: 14px;
     }
 
-    .projects-img-mobile .mobile-button:last-child {
+    .slider--mobile-button.right {
         right: 14px;
     }
 
